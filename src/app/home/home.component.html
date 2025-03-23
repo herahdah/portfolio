@@ -1,0 +1,161 @@
+<div class= 'hero min-h-screen'>
+    <nav class="flex items-center justify-between p-4 sticky  top-0 text-white">
+        <!-- Logo -->
+        <div class="text-2xl font-medium text-[#20D0C4]">{{ name }}</div>
+      
+        <!-- Navigation Links -->
+        <ul class="flex space-x-6 justify-center text  font-medium  text-gray-400">
+            <li class="text-[#20D0C4] font-semibold  cursor-pointer">Home</li>
+            <li class="hover:text-[#20D0C4] pointer">Featured projects</li>
+            <li class="hover:text-[#20D0C4] cursor-pointer">About me</li>
+            <li class="hover:text-[#20D0C4] cursor-pointer">Contact me</li>
+            <li class="hover:text-[#20D0C4] cursor-pointer">View Resume</li>
+    
+          
+          </ul>
+        
+      </nav>
+      
+      <hr class="border-gray-700">
+    
+      <div class="text-center text-white  min-h-screen flex flex-col justify-center items-center px-6">
+      <h1 class="text-3xl md:text-5xl font-light" @flipIn>
+        Hi, I am <span class="font-bold text-[#20D0C4]" >Sanni-Oluwaseyi</span>
+      </h1>
+      
+      <p class="text-lg md:text-xl text-gray-300 mt-4" @slideIn>
+        An innovative <span class="font-semibold text-[#20D0C4]">Frontend Developer</span> 
+        building seamless and dynamic user experiences. <br>
+        Let's bring ideas to life with clean and efficient code!
+      </p>
+      
+      
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4 mt-10">
+        <a href="mailto:oluwaseyisanni1999@gmail.com" class="">
+          <i class="fa-regular fa-envelope w-6 text-2xl text-gray-300"></i>
+        </a>
+      
+        <a href="https://about.me/sanni_iradatoluwaseyi" class="">
+            <i class="fa-solid fa-circle-user w-6 text-2xl text-gray-300"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sanni-oluwaseyi" class="">
+            <i class="fa-brands fa-linkedin-in w-6 text-2xl text-gray-300" ></i>
+        </a>
+        <a href="#" >
+            <i class="fa-brands fa-github w-6 text-2xl text-gray-300"></i>
+        </a>
+      </div>
+    </div>
+    
+      
+</div>
+
+<div class="bg-[#131313] min-h-screen flex flex-col items-center justify-center px-6 py-12">
+    <h2 class="text-gray-400 text-sm uppercase tracking-widest">SERVICES</h2>
+    <h1 class="text-white text-3xl md:text-5xl font-semibold mt-2">
+      What <span class="text-[#20D0C4] ">I do.</span>
+    </h1>
+  
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl w-full">
+        <!-- Web Development -->
+        <div class="bg-[#20D0C4] p-6 rounded-lg shadow-lg relative text-black min-h-[235px]">
+          <span class="absolute top-4 right-6 text-5xl font-bold text-white/20">01</span>
+          <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-code text-2xl"></i>
+            <h3 class="text-lg font-semibold pt-6">Web Development</h3>
+          </div>
+          <p class="mt-3 text-sm tracking-wide">
+            I leverage my expertise in 
+            <span class="font-semibold">HTML, CSS3, JavaScript, Tailwind, and Angular</span> 
+            to create innovative and user-friendly digital solutions.
+          </p>
+        </div>
+      
+      <!-- UI Design -->
+      <div class="bg-[#262626] p-6 rounded-lg border border-[#20D0C4] shadow-lg relative text-white hover:bg-[#262626] transition">
+        <span class="absolute top-4 right-6 text-5xl font-bold text-gray-600">02</span>
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-pen-ruler text-2xl"></i>
+          <h3 class="text-lg font-bold pt-6">UI Design</h3>
+        </div>
+        <p class="mt-3 text-sm tracking-wide">
+          I have some experience with UI/UX and Figma. I focus on creating clean and user-friendly designs that look good and work well.
+        </p>
+      </div>
+      
+      
+  
+      <!-- Content Writing -->
+      <div class="bg-[#262626] p-6 rounded-lg shadow-lg border border-[#20D0C4] relative text-white hover:bg-[#262626] transition">
+        <span class="absolute top-4 right-6 text-5xl font-bold text-gray-600">03</span>
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-paint-brush text-2xl"></i>
+          <h3 class="text-lg font-bold pt-6">Graphics Design</h3>
+        </div>
+        <p class="mt-3 text-sm tracking-wide">
+          I have experience in graphic design using CorelDRAW, allowing me to create visually appealing and professional designs.
+        </p>
+      </div>
+      
+  </div>
+
+  <section class="max-w-6xl mx-auto py-12 bg-[#131313]">
+    c<h2 class="text-gray-400 text-center text-sm uppercase tracking-widest">PORTFOLIO</h2>
+
+    <h2 class="text-xl text-center font-bold text-white">
+      Featured <span class="text-[#20D0C4]">projects.</span>
+    </h2>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+      <div *ngFor="let project of projects" class="p-4 border border-[#20D0C4] rounded-lg shadow-lg text-white">
+        <img [src]="project.image" alt="{{ project.title }}" class="rounded-lg">
+        <h3 class="mt-4 text-lg font-bold">{{ project.title }}</h3>
+        <p class="text-sm text-gray-400">{{ project.description }}</p>
+        <a [href]="project.link" target="_blank" class="text-[#20D0C4] hover:underline">View Project</a>
+      </div>
+    </div>
+   
+     
+    
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+        <div *ngFor="let project of projects" class="p-4 border border-[#20D0C4] rounded-lg shadow-lg text-white">
+          <img [src]="project.image" alt="{{ project.title }}" class="rounded-lg">
+          <h3 class="mt-4 text-lg font-bold">{{ project.title }}</h3>
+          <p class="text-sm text-gray-400">{{ project.description }}</p>
+        <a [href]="project.link" target="_blank" class="text-[#20D0C4] hover:underline">View Project</a>
+
+        </div>
+      </div>
+  </section>
+  <!-- about-me.component.html -->
+<div class="flex flex-col md:flex-row items-center md:items-start bg-gray-900 text-white p-8 rounded-lg shadow-lg">
+  <!-- Profile Image and Icons -->
+  <div class="relative w-48 h-48 mb-6 md:mb-0 md:mr-10">
+    <img src="assets/seyi.jpg" alt="Profile" class="w-full h-full object-cover rounded-full border-4 border-gray-700" />
+    
+    <!-- Floating Skill Icons -->
+    <img src="assets/js-icon.png" alt="JavaScript" class="absolute top-0 right-0 w-10 h-10" />
+    <img src="assets/react-icon.png" alt="React" class="absolute bottom-0 left-0 w-10 h-10" />
+    <img src="assets/css-icon.png" alt="CSS" class="absolute bottom-0 right-0 w-10 h-10" />
+  </div>
+  
+  <!-- About Me Text -->
+  <div>
+    <h2 class="text-3xl font-bold text-green-400 mb-2">About <span class="text-blue-400">Me</span></h2>
+    <p class="text-gray-300 mb-4">
+      Velit quis pulvinar sed risus diam. Commodo tincidunt tincidunt ultrices faucibus nullam metus nec. 
+      Nulla sit lacus aliquam vulputate viverra habitasse convallis. M cras dui in integer amet in quis nam.
+    </p>
+    <p class="text-gray-300 mb-4">
+      Convallis tincidunt posuere nibh cras non morbi in varius arcu. Et libero diam sit risus tincidunt.
+    </p>
+    <button class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg flex items-center">
+      View Resume
+      <span class="ml-2">📄</span>
+    </button>
+  </div>
+</div>
+
+  
+  
